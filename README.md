@@ -1,46 +1,37 @@
-# Portfolio
+# Mohith Anumula — Portfolio
 
-A personal portfolio site for a software engineer, built from scratch with plain HTML, CSS and JavaScript. No build step and no dependencies.
+A dark, cinematic personal portfolio: near-black background, burgundy accents and editorial typography. Short videos of me run through the page: on the right in the top section, on the left in About, then again in Skills, Projects, Experience and Contact.
 
-**Sections:** glassy futuristic design: aurora background, starfield, cursor spotlight, 3D-tilt glass cards · hero with typing effect and an animated 3D cartoon of me that stands, breathes, blinks, looks at your cursor and says "Hi!" with a head tilt and a waving hand · tech-stack marquee · about · services · stacked project cards · testimonials · contact form · footer
+Plain HTML, CSS and JavaScript. No build step.
+
+## Files
+
+```
+index.html          the whole site
+resume.pdf          your résumé (add it; the Résumé buttons link here)
+images/avatar.png   shown wherever a video is missing
+videos/
+  hero-right.mp4    you on the RIGHT (top section, Skills, Experience, Contact)
+  about-left.mp4    you on the LEFT (About, Projects)
+VIDEO-PROMPTS.md    the Google Flow prompts for making the two videos
+```
 
 ## Make it yours
 
-Search `index.html` for `EDIT:` comments and `[brackets]`, then replace:
+1. **Videos:** follow `VIDEO-PROMPTS.md`, then put both files in a `videos` folder.
+2. **Résumé:** add your résumé as `resume.pdf` next to `index.html`.
+3. **Text:** in `index.html`, replace everything in `[brackets]` with details from your résumé: city, intro, bio, skills, projects, experience, education, email and LinkedIn link. Search for `EDIT:` to find each part.
 
-- your name (hero, footer, page title), city, role and intro
-- the rotating roles in the hero (the `ROLES` list in the script at the bottom)
-- the tech-stack chips in the marquee
-- the three project cards: name, description, stack, links and a screenshot
-- testimonials (real quotes only — LinkedIn recommendations work well)
-- email and social links
-- add your CV as `resume.pdf` in the repo root
+## How the videos behave
 
-To use a real screenshot in a project card, replace the `<span class="placeholder">` with:
-
-```html
-<img src="images/project-1.png" alt="Screenshot of Project name" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0">
-```
-
-### Contact form
-
-The form posts to [Formspree](https://formspree.io). Create a free form there and replace `YOUR_FORM_ID` in `index.html`.
+- The top-section video loads first. The others load only when you scroll near them, and play only while they're on screen.
+- If a video file is missing, the cartoon in `images/avatar.png` is shown instead, so the site never looks broken.
+- With "reduce motion" turned on in the visitor's system settings, the videos and animations stay still.
 
 ## Run locally
 
-Open `index.html` in a browser, or run:
-
-```bash
-python3 -m http.server 8000
-```
+Open `index.html` in a browser, or run `python3 -m http.server 8000` and go to http://localhost:8000.
 
 ## Deploy with GitHub Pages
 
-1. Push to GitHub.
-2. Go to **Settings → Pages**.
-3. Under **Source**, choose **Deploy from a branch**, then `main` and `/ (root)`.
-4. Your site will go live at `https://<username>.github.io/<repo>/`.
-
-### The animated avatar
-
-The character comes from `images/avatar.png`, cut into layers (`leg-l`, `leg-r`, `torso`, `head`) so the body can breathe and shift its weight and the head can tilt and nod. Every few seconds it says "Hi!" with a waving hand in the speech bubble. The timing is set in the last `<script>` in `index.html`.
+Push to GitHub, then go to **Settings → Pages**. Choose **Deploy from a branch**, then `main` and `/ (root)`, and click **Save**. The site goes live at https://mohithanumula.github.io/Portfolio/
